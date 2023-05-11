@@ -1,0 +1,368 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11827,        360]
+NotebookOptionsPosition[      9810,        322]
+NotebookOutlinePosition[     10153,        337]
+CellTagsIndexPosition[     10110,        334]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Exemplo de c\[AAcute]lculo de integral de linha com Mathematica: Exerc\
+\[IAcute]cio 16 da L4 de C\[AAcute]lculo 3.
+Note que, embora nabla vetor F seja nulo, F tem um polo em (0,0,0). Portanto, \
+qualquer
+caminho de integra\[CCedilla]\[ATilde]o que contenha a origem n\[ATilde]o \
+necessariamente ter\[AAcute] integral de linha
+fechada igual a 0.\
+\>", "Text",
+ CellChangeTimes->{{3.780872569657445*^9, 
+  3.780872678108086*^9}},ExpressionUUID->"8e45c20f-8fcc-484d-8189-\
+e3398a84491a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "y"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"4", "*", 
+         RowBox[{"x", "^", "2"}]}], "+", 
+        RowBox[{"y", "^", "2"}]}], ")"}]}], ",", 
+     RowBox[{"x", "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"4", 
+         RowBox[{"x", "^", "2"}]}], "+", 
+        RowBox[{"y", "^", "2"}]}], ")"}]}], ",", "0"}], "}"}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{3.7808718855214553`*^9},
+ CellLabel->
+  "In[105]:=",ExpressionUUID->"ef080786-3391-4f10-a832-23a5b8575c71"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{"Curl", "[", 
+   RowBox[{"F", ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.780871915914633*^9, 3.7808719495059376`*^9}},
+ CellLabel->
+  "In[109]:=",ExpressionUUID->"caa56f71-2cd5-4028-ae9d-49951bb33c43"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "0", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{{3.780871922963313*^9, 3.7808719503264804`*^9}},
+ CellLabel->
+  "Out[109]=",ExpressionUUID->"99b38dcd-73cf-4993-b6fa-de13fd088112"]
+}, Open  ]],
+
+Cell["Parametriza\[CCedilla]\[ATilde]o c: r(t) = ( x(t), y(t), z(t) )", "Text",
+ CellChangeTimes->{{3.781107505812668*^9, 
+  3.7811075377234244`*^9}},ExpressionUUID->"590f1cec-82b2-4d80-b2db-\
+45dfc4702c90"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"c", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"3", "/", "2"}], "*", 
+     RowBox[{"Cos", "[", "t", "]"}]}], ",", 
+    RowBox[{"3", "*", 
+     RowBox[{"Sin", "[", "t", "]"}]}], ",", "0"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.7808720726182194`*^9, 3.7808721148852806`*^9}, {
+  3.7808722680715322`*^9, 3.780872373381005*^9}, {3.7808724850011125`*^9, 
+  3.7808724871635447`*^9}},
+ CellLabel->
+  "In[130]:=",ExpressionUUID->"8df83943-3b84-4323-9906-71029f81899d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"3", " ", 
+     RowBox[{"Cos", "[", "t", "]"}]}], "2"], ",", 
+   RowBox[{"3", " ", 
+    RowBox[{"Sin", "[", "t", "]"}]}], ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.78087248819623*^9},
+ CellLabel->
+  "Out[130]=",ExpressionUUID->"bef614a9-6edb-4106-a7cd-33b188b5a8ee"]
+}, Open  ]],
+
+Cell["Express\[ATilde]o de integra\[CCedilla]\[ATilde]o:", "Text",
+ CellChangeTimes->{{3.7811075450499306`*^9, 
+  3.7811075518315086`*^9}},ExpressionUUID->"428f5795-cc73-41f2-b6a4-\
+b521d6038c81"],
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"F", ".", 
+     RowBox[{"D", "[", 
+      RowBox[{"c", ",", "t"}], "]"}]}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"x", "\[Rule]", 
+       RowBox[{"c", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+      RowBox[{"y", "\[Rule]", 
+       RowBox[{"c", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+      RowBox[{"z", "\[Rule]", 
+       RowBox[{"c", "[", 
+        RowBox[{"[", "3", "]"}], "]"}]}]}], "}"}]}], " ", ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"2", "*", "Pi"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7808721438310633`*^9, 3.780872236558612*^9}},
+ CellLabel->
+  "In[131]:=",ExpressionUUID->"8e2a846d-13d1-47a4-a2a4-d24710d02145"],
+
+Cell["Resultado:", "Text",
+ CellChangeTimes->{{3.781107558596649*^9, 
+  3.7811075601592236`*^9}},ExpressionUUID->"ced0fc66-a13e-4073-acd8-\
+fba4c7641b87"],
+
+Cell[BoxData["\[Pi]"], "Output",
+ CellChangeTimes->{
+  3.7808722382637434`*^9, {3.780872277695921*^9, 3.780872284079159*^9}, 
+   3.780872320016575*^9, {3.7808723567219453`*^9, 3.7808723862305355`*^9}, 
+   3.7808725021336136`*^9},
+ CellLabel->
+  "Out[131]=",ExpressionUUID->"b20a6abb-14b7-4515-95fb-e50a849bb9c6"],
+
+Cell["\<\
+
+
+
+
+
+
+
+
+
+
+M\[EAcute]todo mais simples, mas inferior: Parametrize r={x(t),y(t),z(t)} e \
+depois aplique F(t) na mesma c\[EAcute]dula. Veja:\
+\>", "Text",
+ CellChangeTimes->{{3.781203757232905*^9, 3.7812037869696426`*^9}, {
+  3.781203858463114*^9, 3.7812038715538034`*^9}, {3.781203932870063*^9, 
+  3.781203934361054*^9}},ExpressionUUID->"331e84b8-8341-4ef3-985b-\
+08bbea6d2274"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", 
+   RowBox[{"x", ",", "y", ",", "z", ",", "t", ",", "F", ",", "c", ",", "r"}], 
+   "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"x", "=", 
+   RowBox[{
+    RowBox[{"3", "/", "2"}], "*", 
+    RowBox[{"Cos", "[", "t", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y", "=", 
+   RowBox[{"3", "*", 
+    RowBox[{"Sin", "[", "t", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"z", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r", "=", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"F", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "y"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"4", "*", 
+         RowBox[{"x", "^", "2"}]}], "+", 
+        RowBox[{"y", "^", "2"}]}], ")"}]}], ",", 
+     RowBox[{"x", "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"4", 
+         RowBox[{"x", "^", "2"}]}], "+", 
+        RowBox[{"y", "^", "2"}]}], ")"}]}], ",", "0"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", "F", "\[IndentingNewLine]", "r"}], "Input",
+ CellChangeTimes->{{3.7812037986944313`*^9, 3.7812038495982237`*^9}, {
+  3.781203880423689*^9, 3.7812038992361794`*^9}},
+ CellLabel->
+  "In[118]:=",ExpressionUUID->"1633bd1f-c0f3-44e1-8a56-2a1d104ccd5b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox[
+     RowBox[{"3", " ", 
+      RowBox[{"Sin", "[", "t", "]"}]}], 
+     RowBox[{
+      RowBox[{"9", " ", 
+       SuperscriptBox[
+        RowBox[{"Cos", "[", "t", "]"}], "2"]}], "+", 
+      RowBox[{"9", " ", 
+       SuperscriptBox[
+        RowBox[{"Sin", "[", "t", "]"}], "2"]}]}]]}], ",", 
+   FractionBox[
+    RowBox[{"3", " ", 
+     RowBox[{"Cos", "[", "t", "]"}]}], 
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"9", " ", 
+        SuperscriptBox[
+         RowBox[{"Cos", "[", "t", "]"}], "2"]}], "+", 
+       RowBox[{"9", " ", 
+        SuperscriptBox[
+         RowBox[{"Sin", "[", "t", "]"}], "2"]}]}], ")"}]}]], ",", "0"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.7812038997114944`*^9},
+ CellLabel->
+  "Out[124]=",ExpressionUUID->"a78d06c4-9281-4ea7-9001-faa9f6a276b2"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"3", " ", 
+     RowBox[{"Cos", "[", "t", "]"}]}], "2"], ",", 
+   RowBox[{"3", " ", 
+    RowBox[{"Sin", "[", "t", "]"}]}], ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.7812038997174983`*^9},
+ CellLabel->
+  "Out[125]=",ExpressionUUID->"414d519b-10e7-4886-9b22-1b9942f4a17b"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Defini\[CCedilla]\[ATilde]o de Integrais de Linha:\n\[Integral]f ds = \
+\[Integral]f(t).norm(r\[CloseCurlyQuote](t)).dt\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Integral]", 
+    OverscriptBox["F", "\[RightVector]"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b1c26e6d-1e1c-49fa-a999-448bc26064d0"],
+ "\[CenterDot]",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["dl", "\[RightVector]"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "ecedcd08-9196-4a28-ba90-912c42ae78fd"],
+ " =",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    RowBox[{"\[Integral]", 
+     OverscriptBox["F", "\[RightVector]"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3c69572f-2c50-4e89-a90f-4bdf2ae99f57"],
+ "\[CenterDot]",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox[
+    RowBox[{
+     RowBox[{"r", "'"}], 
+     RowBox[{"(", "t", ")"}]}], "\[RightVector]"], TraditionalForm]],
+  ExpressionUUID->"80870ea8-1a52-4086-869f-912f605afd93"],
+ " dt\nA fun\[CCedilla]\[ATilde]o integrate do mathematica automaticamente \
+calcula dt, ds ou dS, para o caso de utilizar integral de linha na regi\
+\[ATilde]o impl\[IAcute]cita, por exemplo."
+}], "Text",
+ CellChangeTimes->{{3.781203951690563*^9, 
+  3.781204100011712*^9}},ExpressionUUID->"feb79502-cf5f-438c-9224-\
+84170e7df968"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"F", ".", 
+    RowBox[{"D", "[", 
+     RowBox[{"r", ",", "t"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"2", "Pi"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7812039033599157`*^9, 3.7812039182783804`*^9}},
+ CellLabel->
+  "In[126]:=",ExpressionUUID->"a361d4a8-7898-4127-b473-f03dda35867c"],
+
+Cell[BoxData["\[Pi]"], "Output",
+ CellChangeTimes->{3.781203924049207*^9},
+ CellLabel->
+  "Out[126]=",ExpressionUUID->"725061d1-4eac-48ca-8172-7fb3a70e847e"]
+}, Open  ]]
+},
+WindowSize->{667, 669},
+WindowMargins->{{Automatic, 209}, {Automatic, 31}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 496, 11, 122, "Text",ExpressionUUID->"8e45c20f-8fcc-484d-8189-e3398a84491a"],
+Cell[1057, 33, 629, 21, 48, "Input",ExpressionUUID->"ef080786-3391-4f10-a832-23a5b8575c71"],
+Cell[CellGroupData[{
+Cell[1711, 58, 328, 8, 45, "Input",ExpressionUUID->"caa56f71-2cd5-4028-ae9d-49951bb33c43"],
+Cell[2042, 68, 234, 5, 32, "Output",ExpressionUUID->"99b38dcd-73cf-4993-b6fa-de13fd088112"]
+}, Open  ]],
+Cell[2291, 76, 207, 3, 34, "Text",ExpressionUUID->"590f1cec-82b2-4d80-b2db-45dfc4702c90"],
+Cell[CellGroupData[{
+Cell[2523, 83, 505, 13, 45, "Input",ExpressionUUID->"8df83943-3b84-4323-9906-71029f81899d"],
+Cell[3031, 98, 343, 10, 48, "Output",ExpressionUUID->"bef614a9-6edb-4106-a7cd-33b188b5a8ee"]
+}, Open  ]],
+Cell[3389, 111, 196, 3, 34, "Text",ExpressionUUID->"428f5795-cc73-41f2-b6a4-b521d6038c81"],
+Cell[3588, 116, 781, 23, 45, "Input",ExpressionUUID->"8e2a846d-13d1-47a4-a2a4-d24710d02145"],
+Cell[4372, 141, 154, 3, 34, "Text",ExpressionUUID->"ced0fc66-a13e-4073-acd8-fba4c7641b87"],
+Cell[4529, 146, 312, 6, 32, "Output",ExpressionUUID->"b20a6abb-14b7-4515-95fb-e50a849bb9c6"],
+Cell[4844, 154, 387, 17, 276, "Text",ExpressionUUID->"331e84b8-8341-4ef3-985b-08bbea6d2274"],
+Cell[CellGroupData[{
+Cell[5256, 175, 1372, 41, 216, "Input",ExpressionUUID->"1633bd1f-c0f3-44e1-8a56-2a1d104ccd5b"],
+Cell[6631, 218, 873, 29, 56, "Output",ExpressionUUID->"a78d06c4-9281-4ea7-9001-faa9f6a276b2"],
+Cell[7507, 249, 346, 10, 48, "Output",ExpressionUUID->"414d519b-10e7-4886-9b22-1b9942f4a17b"]
+}, Open  ]],
+Cell[7868, 262, 1342, 37, 127, "Text",ExpressionUUID->"feb79502-cf5f-438c-9224-84170e7df968"],
+Cell[CellGroupData[{
+Cell[9235, 303, 399, 11, 45, "Input",ExpressionUUID->"a361d4a8-7898-4127-b473-f03dda35867c"],
+Cell[9637, 316, 157, 3, 32, "Output",ExpressionUUID->"725061d1-4eac-48ca-8172-7fb3a70e847e"]
+}, Open  ]]
+}
+]
+*)
+

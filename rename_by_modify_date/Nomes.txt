@@ -1,0 +1,10 @@
+1 - Banco de Dados Relacionais – Parte I
+2 - Banco de Dados Relacionais – Parte II
+3 - Banco de Dados Relacionais – Parte III
+4 - Banco de Dados Relacionais – Parte IV
+5 - Warehouse - Parte I
+6 - Warehouse - Parte II
+7 - Banco de Dados NoSQL
+8 - Banco de Dados: MongoDB
+9 - Banco de Dados: PostgreSQL
+10 - Banco de Dados: Linguagem SQL

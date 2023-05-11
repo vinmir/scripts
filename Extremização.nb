@@ -1,0 +1,283 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9781,        275]
+NotebookOptionsPosition[      8329,        241]
+NotebookOutlinePosition[      8730,        257]
+CellTagsIndexPosition[      8687,        254]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Extremiza\[CCedilla]\[ATilde]o de fun\[CCedilla]\[OTilde]es", "Title",
+ CellChangeTimes->{{3.825104355857521*^9, 
+  3.825104362964003*^9}},ExpressionUUID->"78d5ab00-be33-4f63-8071-\
+c258bb1fd27b"],
+
+Cell[TextData[{
+ "O Mathematica permite a extremiza\[CCedilla]\[ATilde]o de fun\[CCedilla]\
+\[OTilde]es com Minimize/Maximize.\nRestrinja o dom\[IAcute]nio na inser\
+\[CCedilla]\[ATilde]o da fun\[CCedilla]\[ATilde]o, ",
+ ButtonBox["como evidenciado aqui",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://mathematica.stackexchange.com/questions/42071/domain-errors-\
+with-maximize-nmaximize"], None},
+  ButtonNote->
+   "https://mathematica.stackexchange.com/questions/42071/domain-errors-with-\
+maximize-nmaximize"],
+ " ou a seguir:\n{f[x1,...,xn], (x1>0)&&(x2<0)&&(2<x3<5)&&(...)}\n"
+}], "Text",
+ CellChangeTimes->{{3.8251043704694157`*^9, 3.82510449674221*^9}, 
+   3.8251046252044363`*^9},ExpressionUUID->"1c2d1cc3-d165-42d1-9b70-\
+2fc93f1ef15a"],
+
+Cell[CellGroupData[{
+
+Cell["Exemplo 1: ITA 2002", "Section",
+ CellChangeTimes->{{3.8251045035564327`*^9, 
+  3.825104508915941*^9}},ExpressionUUID->"0f46f861-696a-4ea6-afad-\
+187f3c5d5061"],
+
+Cell["\<\
+Mostre que, se x,y s\[ATilde]o reais positivos, ent\[ATilde]o (2+x/y+y/x)^4 \
+\[GreaterEqual] 70.\
+\>", "Text",
+ CellChangeTimes->{{3.825104514276821*^9, 3.825104566249251*^9}, {
+  3.825104730812222*^9, 
+  3.8251047700586863`*^9}},ExpressionUUID->"3216bdd7-e18a-448a-b9da-\
+5fe19dcf7545"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"fDom", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"2", "+", 
+        RowBox[{"x", "/", "y"}], "+", 
+        RowBox[{"y", "/", "x"}]}], ")"}], "^", "4"}], ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"x", ">", "0"}], ")"}], "&&", 
+      RowBox[{"(", 
+       RowBox[{"y", ">", "0"}], ")"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fDom", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"2", "+", 
+        RowBox[{"x", "/", "y"}], "+", 
+        RowBox[{"y", "/", "x"}]}], ")"}], "^", "4"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"x", ">", "0"}], ",", 
+       RowBox[{"y", ">", "0"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Minimize", "[", 
+  RowBox[{"fDom", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.825104776659068*^9, 3.825104808869473*^9}, {
+  3.825104965188858*^9, 3.825104975893599*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"402e8f31-8fd9-4301-9a8b-e2887eb228c4"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"256", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "1"}], ",", 
+     RowBox[{"y", "\[Rule]", "1"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.825104809760366*^9, {3.825104976462483*^9, 3.8251049902288933`*^9}},
+ CellLabel->"Out[3]=",ExpressionUUID->"580bc13e-9414-426c-8fd5-c880865accfc"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exemplo 2: Kovas", "Section",
+ CellChangeTimes->{{3.8251048179643183`*^9, 
+  3.825104830764166*^9}},ExpressionUUID->"2b10d124-3b43-4b6e-a568-\
+ea70bc76a534"],
+
+Cell[TextData[{
+ "Consulte o documento referente a isso em ",
+ StyleBox["Programa\[CCedilla]\[ATilde]o Geral -> Variados -> Kovas. ",
+  FontSlant->"Italic"],
+ "Provavelmente h\[AAcute] uma forma melhor de definir os conjuntos."
+}], "Text",
+ CellChangeTimes->{{3.8251048344817677`*^9, 
+  3.82510489761416*^9}},ExpressionUUID->"2d0c9dbb-970a-4eaf-90a9-\
+8ed8caf09b38"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dom1", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"0", "\[LessEqual]", "x1", "\[LessEqual]", "600"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "x2", "\[LessEqual]", "600"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "x3", "\[LessEqual]", "500"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "x4", "\[LessEqual]", "500"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "x5", "\[LessEqual]", "500"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "x6", "\[LessEqual]", "300"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "x7", "\[LessEqual]", "300"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "x8", "\[LessEqual]", "300"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "x9", "\[LessEqual]", "400"}], ",", 
+     RowBox[{"0", "\[LessEqual]", "x10", "\[LessEqual]", "400"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"restraint1", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"0", "\[LessEqual]", 
+      RowBox[{"x1", "+", "x2"}], "\[LessEqual]", "600"}], ",", 
+     RowBox[{"0", "\[LessEqual]", 
+      RowBox[{"x3", "+", "x4", "+", "x5"}], "\[LessEqual]", "500"}], ",", 
+     RowBox[{"0", "\[LessEqual]", 
+      RowBox[{"x6", "+", "x7", "+", "x8"}], "\[LessEqual]", "300"}], ",", 
+     RowBox[{"0", "\[LessEqual]", 
+      RowBox[{"x9", "+", "x10"}], "\[LessEqual]", "400"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"restraint2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"0.85", "x1"}], "+", 
+       RowBox[{"0.9", "x3"}], "+", 
+       RowBox[{"0.9", "x6"}], "+", 
+       RowBox[{"0.8", "x9"}]}], "\[Equal]", "500"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"0.8", "x2"}], "+", 
+       RowBox[{"0.8", "x4"}], "+", 
+       RowBox[{"0.85", "x7"}], "+", 
+       RowBox[{"0.7", "x10"}]}], "\[Equal]", "600"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"0.7", "x5"}], "+", 
+       RowBox[{"0.8", "x8"}]}], "\[Equal]", "300"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fDom", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"21.5", "x1"}], "+", 
+      RowBox[{"26.5", "x2"}], "+", 
+      RowBox[{"25.75", "x3"}], "+", 
+      RowBox[{"28.25", "x4"}], "+", 
+      RowBox[{"25.5", "x5"}], "+", 
+      RowBox[{"23.75", "x6"}], "+", 
+      RowBox[{"26.75", "x7"}], "+", 
+      RowBox[{"27.5", "x8"}], "+", 
+      RowBox[{"24.5", "x9"}], "+", 
+      RowBox[{"25.5", "x10"}]}], ",", 
+     RowBox[{"dom1", "&&", "restraint1", "&&", "restraint2"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Minimize", "[", 
+  RowBox[{"fDom", ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "x1", ",", "x2", ",", "x3", ",", "x4", ",", "x5", ",", "x6", ",", "x7", 
+     ",", "x8", ",", "x9", ",", "x10"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.825105004619832*^9, 3.825105173709022*^9}, {
+   3.825105205037487*^9, 3.825105306778698*^9}, {3.825105354129611*^9, 
+   3.8251054244366617`*^9}, {3.8251054547607117`*^9, 3.825105509643538*^9}, 
+   3.82510555888446*^9, {3.825105603865902*^9, 3.825105671174732*^9}},
+ CellLabel->"In[59]:=",ExpressionUUID->"b33fc01e-6dc8-4ce5-aeed-d80937586b7b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"44073.619447779114`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x1", "\[Rule]", "588.2352941176471`"}], ",", 
+     RowBox[{"x2", "\[Rule]", "11.764705882352928`"}], ",", 
+     RowBox[{"x3", "\[Rule]", "0.`"}], ",", 
+     RowBox[{"x4", "\[Rule]", "71.42857142857144`"}], ",", 
+     RowBox[{"x5", "\[Rule]", "428.5714285714286`"}], ",", 
+     RowBox[{"x6", "\[Rule]", "0.`"}], ",", 
+     RowBox[{"x7", "\[Rule]", "300.`"}], ",", 
+     RowBox[{"x8", "\[Rule]", "0.`"}], ",", 
+     RowBox[{"x9", "\[Rule]", "0.`"}], ",", 
+     RowBox[{"x10", "\[Rule]", "397.77911164465786`"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.8251055106077023`*^9, 3.825105559466943*^9, {3.825105613416874*^9, 
+   3.8251056716860533`*^9}},
+ CellLabel->"Out[63]=",ExpressionUUID->"103d18f5-5721-4af5-85b7-54a9f90848ae"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.825104906636363*^9, 
+  3.825104914045426*^9}},ExpressionUUID->"4311ea78-18b5-4ccd-a022-\
+366df4612cb4"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1024.5, 527.25},
+WindowMargins->{{0, Automatic}, {0.75, Automatic}},
+FrontEndVersion->"12.2 for Linux x86 (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d7e8a596-714e-499a-9976-97eac2ebc908"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 202, 3, 98, "Title",ExpressionUUID->"78d5ab00-be33-4f63-8071-c258bb1fd27b"],
+Cell[785, 27, 758, 16, 104, "Text",ExpressionUUID->"1c2d1cc3-d165-42d1-9b70-2fc93f1ef15a"],
+Cell[CellGroupData[{
+Cell[1568, 47, 166, 3, 68, "Section",ExpressionUUID->"0f46f861-696a-4ea6-afad-187f3c5d5061"],
+Cell[1737, 52, 298, 7, 35, "Text",ExpressionUUID->"3216bdd7-e18a-448a-b9da-5fe19dcf7545"],
+Cell[CellGroupData[{
+Cell[2060, 63, 1121, 36, 71, "Input",ExpressionUUID->"402e8f31-8fd9-4301-9a8b-e2887eb228c4"],
+Cell[3184, 101, 359, 9, 33, "Output",ExpressionUUID->"580bc13e-9414-426c-8fd5-c880865accfc"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3592, 116, 163, 3, 68, "Section",ExpressionUUID->"2b10d124-3b43-4b6e-a568-ea70bc76a534"],
+Cell[3758, 121, 366, 8, 35, "Text",ExpressionUUID->"2d0c9dbb-970a-4eaf-90a9-8ed8caf09b38"],
+Cell[CellGroupData[{
+Cell[4149, 133, 3129, 77, 154, "Input",ExpressionUUID->"b33fc01e-6dc8-4ce5-aeed-d80937586b7b"],
+Cell[7281, 212, 853, 19, 55, "Output",ExpressionUUID->"103d18f5-5721-4af5-85b7-54a9f90848ae"]
+}, Open  ]],
+Cell[8149, 234, 152, 3, 29, "Input",ExpressionUUID->"4311ea78-18b5-4ccd-a022-366df4612cb4"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

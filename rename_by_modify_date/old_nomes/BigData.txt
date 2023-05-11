@@ -1,0 +1,10 @@
+1 - Fundamentos do Big Data
+2 - Tipos de Dados e VS do Big Data
+3 - Pipeline, Data, Lake, ETL x ELT
+4 - NOSQL
+5 - HADOOP
+6 - Arquitetura de Big Data
+7 - Questões
+8 - Preparação dos Dados
+9 - Visualização de Dados
+10 - Visualização de Dados II 

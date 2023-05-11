@@ -1,0 +1,175 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5546,        165]
+NotebookOptionsPosition[      4508,        140]
+NotebookOutlinePosition[      4969,        157]
+CellTagsIndexPosition[      4926,        154]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Resolu\[CCedilla]\[ATilde]o de Sistemas Lineares", "Section",
+ CellChangeTimes->{{3.889313377559984*^9, 
+  3.889313381727971*^9}},ExpressionUUID->"46dbb750-3011-467a-8f71-\
+928d14709cf8"],
+
+Cell["\<\
+O procedimento abaixo ilustra como resolver analiticamente um sistema linear \
+cuja exist\[EHat]ncia de solu\[CCedilla]\[OTilde]es dependa do vetor b. O \
+RowReduce do Mathematica n\[ATilde]o \[EAcute] \[UAcute]til quando \
+n\[ATilde]o se sabe a priori se a matriz \[EAcute] invers\[IAcute]vel.
+Ao inv\[EAcute]s de usar RowReduce, use Reduce ou Eliminate, conforme \
+mencionado no texto abaixo:\
+\>", "Text",
+ CellChangeTimes->{{3.889313383472021*^9, 
+  3.889313479223178*^9}},ExpressionUUID->"0297a6a2-4e53-45e7-af9d-\
+e40b56b1a2d6"],
+
+Cell[TextData[ButtonBox["Find a condition that b must satisfy so that Ax=b \
+has solution",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://mathematica.stackexchange.com/questions/115160/find-a-\
+condition-that-b-must-satisfy-so-that-ax-b-has-solution"], None},
+ ButtonNote->
+  "https://mathematica.stackexchange.com/questions/115160/find-a-condition-\
+that-b-must-satisfy-so-that-ax-b-has-solution"]], "Item",
+ CellChangeTimes->{{3.889313491900271*^9, 
+  3.889313498130926*^9}},ExpressionUUID->"572ceec3-b137-499d-ac2f-\
+6f2128b41544"],
+
+Cell["\<\
+O procedimento abaixo se refere ao texto \[OpenCurlyDoubleQuote]Linear \
+Algebra\[CloseCurlyDoubleQuote], de Kunze & Hoffman, pg. 285 (livro, n\
+\[ATilde]o pdf).\
+\>", "Text",
+ CellChangeTimes->{{3.889313504247286*^9, 
+  3.8893135500711803`*^9}},ExpressionUUID->"05bb1ffb-62f6-4da6-b6f5-\
+fe95b8ccffa6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"A", ",", "x", ",", "b"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", GridBox[{
+     {"1", "2", "2", "1"},
+     {"0", "2", "0", "1"},
+     {
+      RowBox[{"-", "2"}], "0", 
+      RowBox[{"-", "4"}], "3"}
+    }]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"x", "=", 
+   RowBox[{"{", 
+    RowBox[{"x1", ",", "x2", ",", "x3"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", 
+   RowBox[{"{", 
+    RowBox[{"b1", ",", "b2", ",", "b3", ",", "b4"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Eliminate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", ".", "A"}], "==", "b"}], ",", "x"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", 
+   RowBox[{"{", 
+    RowBox[{"b1", ",", "b2", ",", 
+     RowBox[{"2", "b1"}], ",", "b3"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", ".", "A"}], "==", "b"}], ",", "x"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.889313041643798*^9, 3.889313051908628*^9}, {
+  3.889313105657522*^9, 3.889313288520969*^9}, {3.889313322010644*^9, 
+  3.889313359609909*^9}},
+ CellLabel->
+  "In[134]:=",ExpressionUUID->"2236dcce-fbf2-490b-9d6d-269f952c35a2"],
+
+Cell[BoxData[
+ RowBox[{"b3", "\[Equal]", 
+  RowBox[{"2", " ", "b1"}]}]], "Output",
+ CellChangeTimes->{{3.8893132285174*^9, 3.889313288839657*^9}, {
+  3.889313323636096*^9, 3.889313360146544*^9}},
+ CellLabel->
+  "Out[138]=",ExpressionUUID->"90316fc2-1ae0-4a43-9e26-30c5b9c22069"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x1", "\[Equal]", 
+   RowBox[{"b1", "-", 
+    FractionBox["b2", "3"], "+", 
+    FractionBox[
+     RowBox[{"2", " ", "b3"}], "3"]}]}], "&&", 
+  RowBox[{"x2", "\[Equal]", 
+   RowBox[{
+    RowBox[{"-", "b1"}], "+", 
+    FractionBox[
+     RowBox[{"5", " ", "b2"}], "6"], "-", 
+    FractionBox[
+     RowBox[{"2", " ", "b3"}], "3"]}]}], "&&", 
+  RowBox[{"x3", "\[Equal]", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox["b2", "6"]}], "+", 
+    FractionBox["b3", "3"]}]}]}]], "Output",
+ CellChangeTimes->{{3.8893132285174*^9, 3.889313288839657*^9}, {
+  3.889313323636096*^9, 3.8893133601502733`*^9}},
+ CellLabel->
+  "Out[140]=",ExpressionUUID->"08192f25-9493-4de7-8215-ac0f996ce3ee"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{606., 639.75},
+WindowMargins->{{Automatic, 23.25}, {-10.314960629921302`, Automatic}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.2 for Linux x86 (64-bit) (November 18, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3b9b21a7-d418-4955-986e-f49624e3ec9c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 193, 3, 68, "Section",ExpressionUUID->"46dbb750-3011-467a-8f71-928d14709cf8"],
+Cell[776, 27, 544, 10, 127, "Text",ExpressionUUID->"0297a6a2-4e53-45e7-af9d-e40b56b1a2d6"],
+Cell[1323, 39, 544, 11, 32, "Item",ExpressionUUID->"572ceec3-b137-499d-ac2f-6f2128b41544"],
+Cell[1870, 52, 313, 7, 58, "Text",ExpressionUUID->"05bb1ffb-62f6-4da6-b6f5-fe95b8ccffa6"],
+Cell[CellGroupData[{
+Cell[2208, 63, 1278, 41, 193, "Input",ExpressionUUID->"2236dcce-fbf2-490b-9d6d-269f952c35a2"],
+Cell[3489, 106, 278, 6, 36, "Output",ExpressionUUID->"90316fc2-1ae0-4a43-9e26-30c5b9c22069"],
+Cell[3770, 114, 710, 22, 53, "Output",ExpressionUUID->"08192f25-9493-4de7-8215-ac0f996ce3ee"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
